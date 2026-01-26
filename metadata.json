@@ -1,0 +1,5 @@
+{
+  "name": "LinguaLate",
+  "description": "A translation tool that adapts text to specific CEFR language levels (A1-C2), allowing users to simplify or advance the complexity of translations or rephrase text within the same language.",
+  "requestFramePermissions": []
+}
