@@ -19,13 +19,65 @@ This makes it an ideal tool for language learners, teachers, and content creator
 *   **AI Model**: Google Gemini 3 Pro (`gemini-3-pro-preview`)
 *   **SDK**: `@google/genai`
 
-## Setup
+## Getting Started
 
-1.  Clone the repository.
-2.  Set up your environment variables. You will need a valid Google Gemini API key.
+Follow these instructions to set up the project locally.
+
+### Prerequisites
+
+*   A modern web browser.
+*   **Google Gemini API Key**: You need a paid or free tier API key from Google AI Studio.
+
+### 1. Get your API Key
+
+1.  Visit [Google AI Studio](https://aistudio.google.com/).
+2.  Sign in with your Google account.
+3.  Click on **Get API key** in the sidebar.
+4.  Click **Create API key**.
+5.  Copy the key string (it starts with `AIza...`).
+
+### 2. Installation
+
+1.  Clone the repository:
     ```bash
-    export API_KEY=your_api_key_here
+    git clone https://github.com/Triamas/LinguaLate.git
+    cd LinguaLate
     ```
-3.  Open `index.html` in a browser or serve via a simple HTTP server (e.g., `npx serve`).
 
-*Note: This project uses ES modules and imports React and the Gemini SDK directly from CDNs, so no complex build step (like Webpack or Vite) is strictly required to run the code provided, although a development server is recommended.*
+2.  **Configuration**:
+    The application requires the API key to be available in the environment variable `API_KEY`.
+    
+    *   **If running in a local development environment (e.g., via a bundler like Vite or Webpack):**
+        Create a `.env` file in the root directory and add your key:
+        ```env
+        API_KEY=your_actual_api_key_here
+        ```
+        *Note: Depending on your build tool, you might need to prefix this (e.g., `VITE_API_KEY` or `REACT_APP_API_KEY`) and update the code references accordingly, but standard Node.js environments look for `process.env.API_KEY`.*
+
+    *   **If running in a cloud IDE or container:**
+        Set the Secret or Environment Variable `API_KEY` in your project settings.
+
+### 3. Running the App
+
+Start your local development server.
+
+```bash
+npm install
+npm start
+# or
+npm run dev
+```
+
+Open your browser to the local server address (usually `http://localhost:3000` or `http://localhost:5173`).
+
+## Usage
+
+1.  **Select Languages**: Choose your source language (or use Auto-detect) and your target language.
+2.  **Select Level**: Choose the desired CEFR proficiency level (A1.1 - C2).
+3.  **Enter Text**: Type or paste text into the left panel.
+4.  **Translate**: Click "Translate" (or press `Ctrl + Enter`).
+5.  **Review**: The adapted translation will stream into the right panel.
+
+## Disclaimer
+
+This tool uses Artificial Intelligence. While the CEFR adaptation is generally accurate, results may vary. Always verify important translations.
