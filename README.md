@@ -15,8 +15,8 @@ This makes it an ideal tool for language learners, teachers, and content creator
 
 ## Tech Stack
 
-*   **Frontend**: React 19, TypeScript, Tailwind CSS
-*   **AI Model**: Google Gemini 3 Pro (`gemini-3-pro-preview`)
+*   **Frontend**: React 19, TypeScript, Tailwind CSS, Vite
+*   **AI Model**: Google Gemini 3 Flash (`gemini-3-flash-preview`)
 *   **SDK**: `@google/genai`
 
 ## Getting Started
@@ -25,7 +25,7 @@ Follow these instructions to set up the project locally.
 
 ### Prerequisites
 
-*   A modern web browser.
+*   **Node.js**: Ensure you have Node.js installed on your machine.
 *   **Google Gemini API Key**: You need a paid or free tier API key from Google AI Studio.
 
 ### 1. Get your API Key
@@ -36,7 +36,7 @@ Follow these instructions to set up the project locally.
 4.  Click **Create API key**.
 5.  Copy the key string (it starts with `AIza...`).
 
-### 2. Installation
+### 2. Installation & Configuration
 
 1.  Clone the repository:
     ```bash
@@ -44,31 +44,34 @@ Follow these instructions to set up the project locally.
     cd LinguaLate
     ```
 
-2.  **Configuration**:
-    The application requires the API key to be available in the environment variable `API_KEY`.
-    
-    *   **If running in a local development environment (e.g., via a bundler like Vite or Webpack):**
-        Create a `.env` file in the root directory and add your key:
-        ```env
-        API_KEY=your_actual_api_key_here
-        ```
-        *Note: Depending on your build tool, you might need to prefix this (e.g., `VITE_API_KEY` or `REACT_APP_API_KEY`) and update the code references accordingly, but standard Node.js environments look for `process.env.API_KEY`.*
-
-    *   **If running in a cloud IDE or container:**
-        Set the Secret or Environment Variable `API_KEY` in your project settings.
+2.  **Create Environment File**:
+    Create a file named `.env` in the root directory of the project.
+    Add your API key to this file:
+    ```env
+    API_KEY=your_actual_api_key_here
+    ```
 
 ### 3. Running the App
 
-Start your local development server.
+#### Option A: Windows One-Click Launcher
+If you are on Windows, you can simply double-click the `start_app.bat` file in the project folder. This script will automatically:
+1.  Pull the latest changes from Git.
+2.  Install dependencies.
+3.  Start the development server.
+4.  Open your default browser to the app.
+
+#### Option B: Manual Start (Mac/Linux/Windows)
+Open your terminal in the project directory and run:
 
 ```bash
+# Install dependencies
 npm install
-npm start
-# or
+
+# Start the development server
 npm run dev
 ```
 
-Open your browser to the local server address (usually `http://localhost:3000` or `http://localhost:5173`).
+Open your browser to the local server address shown in the terminal (usually `http://localhost:5173`).
 
 ## Usage
 
